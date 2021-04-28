@@ -3,8 +3,8 @@ class Application
     resp = Rack::Response.new 
     req = Rack::Request.new(env)
     
-    if req.path.match(/items/<ITEM NAME>)
-      @@items.each do |item|
+    if req.path.match(/items\/.+/)
+        item_name = req.path.split("/items/").last
         resp.write "#{item.price}"
       end
     else 
