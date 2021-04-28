@@ -4,5 +4,6 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/item/)
-      
+      resp.write item.price 
+    else 404
 end 
