@@ -5,5 +5,9 @@ class Application
     
     if req.path.match(/item/)
       resp.write item.price 
-    else 404
+    else 
+      resp.write "Route not found"
+      resp.status = 404
+    end 
+  end
 end 
