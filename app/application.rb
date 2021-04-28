@@ -5,7 +5,8 @@ class Application
     
     if req.path.match(/items/)
       @@items.each do |item|
-      resp.write "#{item.price}"
+        resp.write "#{item.price}"
+      end
     else 
       resp.write "Route not found"
       resp.status = 404
