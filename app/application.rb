@@ -5,7 +5,7 @@ class Application
     
     if req.path.match(/items\/.+/)
         item_name = req.path.split("/items/").last
-        item = @@items.detect
+        item = @@items.detect {|i|
         resp.write "#{item.price}"
       end
     else 
